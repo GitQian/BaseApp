@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
+import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.Fragment;
 import androidx.viewbinding.ViewBinding;
 
@@ -21,6 +22,9 @@ public abstract class BaseFragment<VB extends ViewBinding> extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = getViewBinding(inflater, container);
+        if (binding instanceof ViewDataBinding) {
+            ((ViewDataBinding) binding).setLifecycleOwner(getViewLifecycleOwner());
+        }
         return binding.getRoot();
     }
 

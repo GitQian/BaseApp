@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.hsae.myapplication.base.NavigationFragment;
+import com.hsae.myapplication.bean.VersionBean;
 import com.hsae.myapplication.databinding.FragmentVersionBinding;
 import com.hsae.myapplication.viewmodel.VersionViewModel;
 import com.hsae.myapplication.viewmodel.ViewModelUtils;
@@ -19,7 +20,9 @@ import androidx.lifecycle.ViewModel;
  * @date: 2024/11/13
  */
 public class VersionFragment extends NavigationFragment<FragmentVersionBinding> implements View.OnClickListener {
-    private ViewModel mViewModel;
+    private VersionViewModel mViewModel;
+    private VersionBean versionBean;
+
     @Override
     protected FragmentVersionBinding getViewBinding(LayoutInflater inflater, ViewGroup container) {
         return FragmentVersionBinding.inflate(inflater, container, false);
@@ -29,7 +32,26 @@ public class VersionFragment extends NavigationFragment<FragmentVersionBinding> 
     protected void initView() {
         mViewModel = ViewModelUtils.getViewModel(this, VersionViewModel.class);
         binding.btnBack.setOnClickListener(this);
+
+        // 设置 ViewModel
+        binding.setLifecycleOwner(this);  // 使 LiveData 能够自动更新
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                versionBean = new VersionBean();
+                versionBean.setSoftVersion("1.0.9");
+                binding.setVersionBean(versionBean);
+                binding.setHwversion("S01");
+            }
+        }).start();
     }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
