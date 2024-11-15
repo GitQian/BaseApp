@@ -14,5 +14,10 @@
         android:name="com.hsae.myapplication.VersionFragment"
         android:label="VersionFragment" />
 
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.hsae.myapplication.NewsFragment"
+        android:label="NewsFragment" />
+
 
 </navigation>

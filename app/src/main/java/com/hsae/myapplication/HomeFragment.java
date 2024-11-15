@@ -1,5 +1,6 @@
 package com.hsae.myapplication;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,7 +40,7 @@ public class HomeFragment extends NavigationFragment<FragmentHomeBinding> implem
 
                 break;
             case R.id.btn_diag:
-
+                navigate(R.id.newsFragment);
                 break;
             default:
                 break;
