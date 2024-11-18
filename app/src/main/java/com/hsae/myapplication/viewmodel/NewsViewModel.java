@@ -1,6 +1,11 @@
 package com.hsae.myapplication.viewmodel;
 
+import android.util.Log;
+
+import com.hsae.myapplication.ApiService;
+import com.hsae.myapplication.RetrofitClient;
 import com.hsae.myapplication.bean.NewsItem;
+import com.hsae.myapplication.bean.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,6 +72,23 @@ public class NewsViewModel extends ViewModel {
 //                        new NewsItem("News Title 2"),
 //                        new NewsItem("News Title 3")
 //                )).delay(2, java.util.concurrent.TimeUnit.SECONDS);
+    }
+
+    public void getUsers(){
+        ApiService apiService = RetrofitClient.getApiService();
+        apiService.getUsers()
+                .subscribeOn(Schedulers.io()) // 在 I/O 线程上执行请求
+                .observeOn(AndroidSchedulers.mainThread()) // 在主线程上观察结果
+                .subscribe(
+                        users -> { // 成功回调
+                            for (User user : users) {
+                                Log.i("qiansheng", user.toString());
+                            }
+                        },
+                        throwable -> { // 错误回调
+                            Log.e("qiansheng", "Error fetching users", throwable);
+                        }
+                );
     }
 
     @Override

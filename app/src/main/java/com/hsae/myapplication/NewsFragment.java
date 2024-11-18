@@ -39,5 +39,6 @@ public class NewsFragment extends NavigationFragment<FramentNewsBinding> {
 
         // Fetch news data
         viewModel.fetchNews();
+        viewModel.getUsers();
     }
 }
