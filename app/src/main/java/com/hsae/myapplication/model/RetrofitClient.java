@@ -1,4 +1,6 @@
-package com.hsae.myapplication;
+package com.hsae.myapplication.model;
+
+import com.hsae.myapplication.model.ApiService;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory;

@@ -10,7 +10,7 @@
 
         <variable
             name="versionBean"
-            type="com.hsae.myapplication.bean.VersionBean" />
+            type="com.hsae.myapplication.model.bean.VersionBean" />
 
     </data>
 
@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".VersionFragment">
+        tools:context=".ui.version.VersionFragment">
 
         <Button
             android:id="@+id/btn_back"

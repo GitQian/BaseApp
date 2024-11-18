@@ -1,10 +1,10 @@
-package com.hsae.myapplication.viewmodel;
+package com.hsae.myapplication.utils;
 
 import android.app.Application;
 
 
-import com.hsae.myapplication.viewmodel.HomeViewModel;
-import com.hsae.myapplication.viewmodel.VersionViewModel;
+import com.hsae.myapplication.ui.home.HomeViewModel;
+import com.hsae.myapplication.ui.version.VersionViewModel;
 
 import androidx.activity.ComponentActivity;
 import androidx.annotation.NonNull;

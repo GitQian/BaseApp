@@ -1,4 +1,4 @@
-package com.hsae.myapplication.viewmodel;
+package com.hsae.myapplication.ui.home;
 
 import android.app.Application;
 import android.util.Log;

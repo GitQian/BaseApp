@@ -1,4 +1,4 @@
-package com.hsae.myapplication.bean;
+package com.hsae.myapplication.model.bean;
 
 /**
  * Description:

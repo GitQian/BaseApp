@@ -1,4 +1,4 @@
-package com.hsae.myapplication;
+package com.hsae.myapplication.ui.News;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -6,7 +6,6 @@ import android.view.ViewGroup;
 import com.hsae.myapplication.base.NavigationFragment;
 import com.hsae.myapplication.databinding.FramentNewsBinding;
 import com.hsae.myapplication.utils.NewsAdapter;
-import com.hsae.myapplication.viewmodel.NewsViewModel;
 
 import java.util.ArrayList;
 

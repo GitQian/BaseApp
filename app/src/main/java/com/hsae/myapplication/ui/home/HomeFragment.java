@@ -1,14 +1,13 @@
-package com.hsae.myapplication;
+package com.hsae.myapplication.ui.home;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.hsae.myapplication.R;
 import com.hsae.myapplication.base.NavigationFragment;
 import com.hsae.myapplication.databinding.FragmentHomeBinding;
-import com.hsae.myapplication.viewmodel.HomeViewModel;
-import com.hsae.myapplication.viewmodel.ViewModelUtils;
+import com.hsae.myapplication.utils.ViewModelUtils;
 
 import androidx.lifecycle.ViewModel;
 
@@ -28,6 +27,7 @@ public class HomeFragment extends NavigationFragment<FragmentHomeBinding> implem
         binding.btnVersion.setOnClickListener(this);
         binding.btnUsbTest.setOnClickListener(this);
         binding.btnDiag.setOnClickListener(this);
+        binding.btnNews.setOnClickListener(this);
     }
 
     @Override
@@ -40,6 +40,10 @@ public class HomeFragment extends NavigationFragment<FragmentHomeBinding> implem
 
                 break;
             case R.id.btn_diag:
+
+                break;
+
+            case R.id.btn_news:
                 navigate(R.id.newsFragment);
                 break;
             default:

@@ -1,11 +1,11 @@
-package com.hsae.myapplication.viewmodel;
+package com.hsae.myapplication.ui.News;
 
 import android.util.Log;
 
-import com.hsae.myapplication.ApiService;
-import com.hsae.myapplication.RetrofitClient;
-import com.hsae.myapplication.bean.NewsItem;
-import com.hsae.myapplication.bean.User;
+import com.hsae.myapplication.model.ApiService;
+import com.hsae.myapplication.model.RetrofitClient;
+import com.hsae.myapplication.model.bean.NewsItem;
+import com.hsae.myapplication.model.bean.User;
 
 import java.util.ArrayList;
 import java.util.List;

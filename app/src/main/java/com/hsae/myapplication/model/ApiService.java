@@ -1,6 +1,6 @@
-package com.hsae.myapplication;
+package com.hsae.myapplication.model;
 
-import com.hsae.myapplication.bean.User;
+import com.hsae.myapplication.model.bean.User;
 
 import java.util.List;
 

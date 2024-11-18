@@ -1,17 +1,15 @@
-package com.hsae.myapplication;
+package com.hsae.myapplication.ui.version;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.hsae.myapplication.R;
 import com.hsae.myapplication.base.NavigationFragment;
-import com.hsae.myapplication.bean.VersionBean;
+import com.hsae.myapplication.model.bean.VersionBean;
 import com.hsae.myapplication.databinding.FragmentVersionBinding;
-import com.hsae.myapplication.viewmodel.VersionViewModel;
-import com.hsae.myapplication.viewmodel.ViewModelUtils;
-
-import androidx.lifecycle.ViewModel;
+import com.hsae.myapplication.utils.ViewModelUtils;
 
 /**
  * Description:

@@ -6,17 +6,17 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.hsae.myapplication.HomeFragment"
+        android:name="com.hsae.myapplication.ui.home.HomeFragment"
         android:label="HomeFragment" />
 
     <fragment
         android:id="@+id/versionFragment"
-        android:name="com.hsae.myapplication.VersionFragment"
+        android:name="com.hsae.myapplication.ui.version.VersionFragment"
         android:label="VersionFragment" />
 
     <fragment
         android:id="@+id/newsFragment"
-        android:name="com.hsae.myapplication.NewsFragment"
+        android:name="com.hsae.myapplication.ui.News.NewsFragment"
         android:label="NewsFragment" />
 
 

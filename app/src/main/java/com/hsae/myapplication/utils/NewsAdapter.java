@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.hsae.myapplication.bean.NewsItem;
+import com.hsae.myapplication.model.bean.NewsItem;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
