@@ -31,9 +31,6 @@ public class VersionFragment extends NavigationFragment<FragmentVersionBinding> 
         mViewModel = ViewModelUtils.getViewModel(this, VersionViewModel.class);
         binding.btnBack.setOnClickListener(this);
 
-        // 设置 ViewModel
-        binding.setLifecycleOwner(this);  // 使 LiveData 能够自动更新
-
         new Thread(new Runnable() {
             @Override
             public void run() {

@@ -19,6 +19,7 @@ import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.ObservableEmitter;
 import io.reactivex.rxjava3.core.ObservableOnSubscribe;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
+import io.reactivex.rxjava3.functions.Action;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 /**
@@ -34,12 +35,17 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
  * empty()	不发射数据，直接 onComplete()
  * never()	不发射数据，也不会结束
  */
-public class NewsViewModel extends ViewModel {
+public class UsersViewModel extends ViewModel {
     private final MutableLiveData<List<NewsItem>> newsList = new MutableLiveData<>();
+    private final MutableLiveData<List<User>> usersList = new MutableLiveData<>();
     private final CompositeDisposable disposables = new CompositeDisposable();
 
     public LiveData<List<NewsItem>> getNewsList() {
         return newsList;
+    }
+
+    public LiveData<List<User>> getUsersList() {
+        return usersList;
     }
 
     public void fetchNews() {
@@ -47,7 +53,12 @@ public class NewsViewModel extends ViewModel {
                 getNewsFromNetwork() // 模拟网络请求
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe(newsList::setValue, Throwable::printStackTrace)
+                        .subscribe(newsList::setValue, Throwable::printStackTrace, new Action() {
+                            @Override
+                            public void run() throws Throwable {
+                                Log.i("qiansheng", "onComplete");
+                            }
+                        })
         );
     }
 
@@ -56,10 +67,8 @@ public class NewsViewModel extends ViewModel {
             @Override
             public void subscribe(@NonNull ObservableEmitter<List<NewsItem>> emitter) throws Throwable {
                 List<NewsItem> list = new ArrayList<>();
-                list.add(new NewsItem("hhhhhhhhhhhhhhhhhhh"));
-//                emitter.onNext(list);
+                list.add(new NewsItem("hhhhhhhhhhhhhhhhhhh"));;
                 list.add(new NewsItem("wwwwwwwwwwwwwwwwwwwww"));
-//                emitter.onNext(list);
                 list.add(new NewsItem("fffffffffffffffffffff"));
                 emitter.onNext(list);
                 emitter.onComplete();
@@ -81,9 +90,12 @@ public class NewsViewModel extends ViewModel {
                 .observeOn(AndroidSchedulers.mainThread()) // 在主线程上观察结果
                 .subscribe(
                         users -> { // 成功回调
+                            List<User> users1 = new ArrayList<>();
                             for (User user : users) {
                                 Log.i("qiansheng", user.toString());
+                                users1.add(user);
                             }
+                            usersList.setValue(users1);
                         },
                         throwable -> { // 错误回调
                             Log.e("qiansheng", "Error fetching users", throwable);

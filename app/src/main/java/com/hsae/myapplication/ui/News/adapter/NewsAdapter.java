@@ -1,4 +1,4 @@
-package com.hsae.myapplication.utils;
+package com.hsae.myapplication.ui.News.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,9 +7,10 @@ import android.widget.TextView;
 
 import com.hsae.myapplication.model.bean.NewsItem;
 
+import java.util.List;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import java.util.List;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
     private List<NewsItem> newsList;

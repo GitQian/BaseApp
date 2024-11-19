@@ -44,7 +44,7 @@ public class HomeFragment extends NavigationFragment<FragmentHomeBinding> implem
                 break;
 
             case R.id.btn_news:
-                navigate(R.id.newsFragment);
+                navigate(R.id.usersFragment);
                 break;
             default:
                 break;

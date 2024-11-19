@@ -15,8 +15,8 @@
         android:label="VersionFragment" />
 
     <fragment
-        android:id="@+id/newsFragment"
-        android:name="com.hsae.myapplication.ui.News.NewsFragment"
+        android:id="@+id/usersFragment"
+        android:name="com.hsae.myapplication.ui.News.UsersFragment"
         android:label="NewsFragment" />
 
 
