@@ -7,6 +7,9 @@ import com.hsae.myapplication.model.RetrofitClient;
 import com.hsae.myapplication.model.bean.NewsItem;
 import com.hsae.myapplication.model.bean.User;
 
+import java.net.ConnectException;
+import java.net.SocketTimeoutException;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -99,6 +102,15 @@ public class UsersViewModel extends ViewModel {
                         },
                         throwable -> { // 错误回调
                             Log.e("qiansheng", "Error fetching users", throwable);
+                            if (throwable instanceof SocketTimeoutException) {
+                                //超时异常
+                                Log.i("qiansheng", "SocketTimeoutException");
+                            } else if (throwable instanceof ConnectException) {
+                                Log.i("qiansheng", "ConnectException");
+                            } else if (throwable instanceof UnknownHostException) {
+                                //无网络
+                                Log.i("qiansheng", "UnknownHostException");
+                            }
                         }
                 );
     }
